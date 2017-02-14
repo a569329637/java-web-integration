@@ -1,0 +1,8 @@
+
+/logs/
+/target/
+/.settings/
+/.idea/
+.project
+.classpath
+java-web-integration.iml
