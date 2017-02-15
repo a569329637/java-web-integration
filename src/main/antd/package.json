@@ -1,0 +1,49 @@
+{
+  "name": "java-web-integration-antd",
+  "version": "1.0.0",
+  "description": "java web integration antd",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/a569329637/java-web-integration.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:dev": "webpack -w --config webpack.config.js",
+    "watch": "webpack --colors --progress --watch",
+    "server": "nodemon ./server.js",
+    "start": "npm run watch & npm run server",
+    "lint": "eslint --ext .jsx,.js ./src",
+    "lint:fix": "npm run lint -- --fix"
+  },
+  "author": "a569329637",
+  "license": "ISC",
+  "dependencies": {
+    "antd": "^2.7.1",
+    "express": "^4.14.1",
+    "nodemon": "^1.11.0",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-router": "^3.0.2",
+    "superagent": "^3.4.3"
+  },
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-cli": "^6.23.0",
+    "babel-core": "^6.23.1",
+    "babel-eslint": "^7.1.1",
+    "babel-loader": "^6.3.0",
+    "babel-plugin-antd": "^0.5.1",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-react": "^6.23.0",
+    "babel-preset-stage-0": "^6.22.0",
+    "eslint": "^3.15.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-babel": "^4.0.1",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.9.0",
+    "webpack": "^2.2.1"
+  }
+}
