@@ -135,6 +135,7 @@
 
   <modules>
     <module>web</module>
+    <module>aop-test</module>
   </modules>
 
 </project>
