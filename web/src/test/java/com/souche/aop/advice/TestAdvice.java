@@ -61,7 +61,7 @@ public class TestAdvice extends BaseTest {
     }
 
     @Test
-    public void testIntroceAdvice() {
+    public void testIntroduceAdvice() {
         // #5
         ForumService forumService = (ForumService) monitor;
 
