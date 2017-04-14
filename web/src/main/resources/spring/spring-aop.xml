@@ -3,6 +3,8 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+    <bean id="forumService" class="com.souche.aop.service.impl.ForumServiceImpl" />
+
     <bean id="target" class="com.souche.aop.advice.NaiveWaiter" />
 
     <!-- #1 -->
@@ -33,6 +35,14 @@
           p:interceptorNames="greetThrowAdvice"
           p:target-ref="target"
           p:optimize="true" />
+
+    <!-- #5 一定要用 cglib -->
+    <bean id="pMonitor" class="com.souche.aop.advice.ControllablePerformanceMonitor" />
+    <bean id="monitor" class="org.springframework.aop.framework.ProxyFactoryBean"
+          p:interfaces="com.souche.aop.introduce.Monitorable"
+          p:interceptorNames="pMonitor"
+          p:target-ref="forumService"
+          p:proxyTargetClass="true" />
 
 
 </beans>

@@ -1,8 +1,11 @@
 package com.souche.aop.advice;
 
-import com.souche.BaseTest;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+
+import com.souche.BaseTest;
+import com.souche.aop.introduce.Monitorable;
+import com.souche.aop.service.ForumService;
 
 /**
  * @author guishangquan
@@ -23,6 +26,9 @@ public class TestAdvice extends BaseTest {
 
     @Autowired
     private NaiveWaiter greetThrowWaiter;
+
+    @Autowired
+    private Monitorable monitor;
 
     @Test
     public void testGreetBeforeAdvice() {
@@ -53,6 +59,21 @@ public class TestAdvice extends BaseTest {
         } catch (Exception e) {
             System.out.println("e.getMessage() = " + e.getMessage());
         }
+    }
+
+    @Test
+    public void testIntroceAdvice() {
+        // #5
+        ForumService forumService = (ForumService) monitor;
+
+        forumService.removeForum(1);
+        forumService.removeTopic(2);
+
+        monitor.setMonitorActive(true);
+
+        forumService.removeForum(1);
+        forumService.removeTopic(2);
+
     }
 
 }
