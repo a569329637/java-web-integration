@@ -12,4 +12,6 @@ public interface Waiter {
 
     void serveTo(String name);
 
+    void exceptionTest();
+
 }

@@ -19,10 +19,18 @@
           p:interceptorNames="greetAfterAdvice"
           p:target-ref="target" />
 
-    <!-- #2 使用到 cglib -->
+    <!-- #3 使用到 cglib -->
     <bean id="greetingInterceptor" class="com.souche.aop.advice.GreetingInterceptor" />
     <bean id="greetingInterceptorWaiter" class="org.springframework.aop.framework.ProxyFactoryBean"
           p:interceptorNames="greetingInterceptor"
+          p:target-ref="target"
+          p:optimize="true" />
+
+    <!-- #4 p:interfaces 会被覆盖，会使用到 cglib -->
+    <bean id="greetThrowAdvice" class="com.souche.aop.advice.GreetThrowAdvice" />
+    <bean id="greetThrowWaiter" class="org.springframework.aop.framework.ProxyFactoryBean"
+          p:interfaces="com.souche.aop.advice.Waiter"
+          p:interceptorNames="greetThrowAdvice"
           p:target-ref="target"
           p:optimize="true" />
 

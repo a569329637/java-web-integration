@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
  * @Package com.souche.aop.advice
  * @date 17/4/14
  **/
-public class TestBeforeAdvice extends BaseTest {
+public class TestAdvice extends BaseTest {
 
     @Autowired
     private Waiter greetBeforeWaiter;
@@ -20,6 +20,9 @@ public class TestBeforeAdvice extends BaseTest {
 
     @Autowired
     private NaiveWaiter greetingInterceptorWaiter; // 可以使 Waiter 或 NaiveWaiter
+
+    @Autowired
+    private NaiveWaiter greetThrowWaiter;
 
     @Test
     public void testGreetBeforeAdvice() {
@@ -40,6 +43,16 @@ public class TestBeforeAdvice extends BaseTest {
         // #3
         greetingInterceptorWaiter.greetTo("name1");
         greetingInterceptorWaiter.serveTo("name2");
+    }
+
+    @Test
+    public void testGreetThrowAdvice() {
+        // #4
+        try {
+            greetThrowWaiter.exceptionTest();
+        } catch (Exception e) {
+            System.out.println("e.getMessage() = " + e.getMessage());
+        }
     }
 
 }
