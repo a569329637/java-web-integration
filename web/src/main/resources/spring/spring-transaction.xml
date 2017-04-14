@@ -12,6 +12,10 @@
 
 	<!-- 注解方式配置事物 -->
 	<!-- <tx:annotation-driven transaction-manager="transactionManager" /> -->
+	<!-- 使用 @transactional -->
+	<!-- 记得要在 xx-servlet.xml 中添加 <tx:annotation-driven transaction-manager="transactionManager" />，否则启动服务时不起作用 -->
+
+
 	<!-- 配置Spring的事务管理器 -->
 	<bean id="transactionManager"
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
