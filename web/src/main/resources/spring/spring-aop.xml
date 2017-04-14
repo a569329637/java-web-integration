@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <aop:aspectj-autoproxy proxy-target-class="true"/>
 
     <bean id="forumService" class="com.souche.aop.service.impl.ForumServiceImpl" />
 
@@ -43,6 +46,37 @@
           p:interceptorNames="pMonitor"
           p:target-ref="forumService"
           p:proxyTargetClass="true" />
+
+    <!-- 静态方法匹配切面类 -->
+    <bean id="waiterTarget" class="com.souche.aop.advisor.Waiter" />
+    <bean id="sellerTarget" class="com.souche.aop.advisor.Seller" />
+
+    <!-- 配置 greetingAdvisor，为什么这里就已经把 greetAdvice 织入 waiterTarget 里了 TODO -->
+    <bean id="greetAdvice" class="com.souche.aop.advisor.GreetingBeforeAdvice" />
+    <bean id="greetingAdvisor" class="com.souche.aop.advisor.GreetingAdvisor"
+          p:advice-ref="greetAdvice" />
+    <!--<bean id="staticAdvisorWaiter" abstract="true"-->
+          <!--class="org.springframework.aop.framework.ProxyFactoryBean"-->
+          <!--p:interceptorNames="greetingAdvisor"-->
+          <!--p:proxyTargetClass="true" />-->
+    <!--<bean id="staticAdvisorWaiter" parent="staticAdvisorParent" p:target-ref="waiterTarget" />-->
+    <!--<bean id="staticAdvisorSeller" parent="staticAdvisorParent" p:target-ref="sellerTarget" />-->
+
+    <!-- 这里也问题，要引入 <aop:aspectj-autoproxy proxy-target-class="true"/> 才行，而且多了好多不明打印 -->
+    <bean id="regexpAdvisor"
+          class="org.springframework.aop.support.RegexpMethodPointcutAdvisor"
+          p:advice-ref="greetAdvice">
+        <property name="patterns">
+            <list>
+                <value>.*greet.*</value>
+            </list>
+        </property>
+    </bean>
+    <bean id="waiter1" class="org.springframework.aop.framework.ProxyFactoryBean"
+          p:interceptorNames="regexpAdvisor"
+          p:target-ref="waiterTarget"
+          p:proxyTargetClass="true" />
+
 
 
 </beans>
