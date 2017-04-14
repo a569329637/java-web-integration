@@ -12,5 +12,12 @@
           p:interceptorNames="greetBeforeAdvice"
           p:target-ref="target" />
 
+    <!-- #2 -->
+    <bean id="greetAfterAdvice" class="com.souche.aop.advice.GreetAfterAdvice" />
+    <bean id="greetAfterWaiter" class="org.springframework.aop.framework.ProxyFactoryBean"
+          p:proxyInterfaces="com.souche.aop.advice.Waiter"
+          p:interceptorNames="greetAfterAdvice"
+          p:target-ref="target" />
+
 
 </beans>

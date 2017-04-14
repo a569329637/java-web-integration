@@ -15,11 +15,21 @@ public class TestBeforeAdvice extends BaseTest {
     @Autowired
     private Waiter greetBeforeWaiter;
 
+    @Autowired
+    private Waiter greetAfterWaiter;
+
     @Test
     public void testGreetBeforeAdvice() {
         // #1
         greetBeforeWaiter.greetTo("name1");
         greetBeforeWaiter.serveTo("name2");
+    }
+
+    @Test
+    public void testGreetAfterAdvice() {
+        // #2
+        greetAfterWaiter.greetTo("name1");
+        greetAfterWaiter.serveTo("name2");
     }
 
 }
