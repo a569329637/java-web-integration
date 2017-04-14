@@ -4,7 +4,6 @@ import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.souche.BaseTest;
-import com.souche.aop.introduce.Monitorable;
 import com.souche.aop.service.ForumService;
 
 /**

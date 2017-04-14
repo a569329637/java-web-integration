@@ -1,6 +1,5 @@
 package com.souche.aop.advice;
 
-import com.souche.aop.introduce.Monitorable;
 import com.souche.aop.proxy.PerformanceMonitor;
 import com.souche.aop.service.ForumService;
 import com.souche.aop.service.impl.ForumServiceImpl;
