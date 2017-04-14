@@ -19,5 +19,12 @@
           p:interceptorNames="greetAfterAdvice"
           p:target-ref="target" />
 
+    <!-- #2 使用到 cglib -->
+    <bean id="greetingInterceptor" class="com.souche.aop.advice.GreetingInterceptor" />
+    <bean id="greetingInterceptorWaiter" class="org.springframework.aop.framework.ProxyFactoryBean"
+          p:interceptorNames="greetingInterceptor"
+          p:target-ref="target"
+          p:optimize="true" />
+
 
 </beans>

@@ -18,6 +18,9 @@ public class TestBeforeAdvice extends BaseTest {
     @Autowired
     private Waiter greetAfterWaiter;
 
+    @Autowired
+    private NaiveWaiter greetingInterceptorWaiter; // 可以使 Waiter 或 NaiveWaiter
+
     @Test
     public void testGreetBeforeAdvice() {
         // #1
@@ -30,6 +33,13 @@ public class TestBeforeAdvice extends BaseTest {
         // #2
         greetAfterWaiter.greetTo("name1");
         greetAfterWaiter.serveTo("name2");
+    }
+
+    @Test
+    public void testGreetingInterceptor() {
+        // #3
+        greetingInterceptorWaiter.greetTo("name1");
+        greetingInterceptorWaiter.serveTo("name2");
     }
 
 }
