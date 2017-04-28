@@ -100,6 +100,12 @@
       <artifactId>log4j</artifactId>
     </dependency>
 
+    <!-- lombok -->
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+    </dependency>
+
     <dependency>
       <groupId>com.souche</groupId>
       <artifactId>java-web-integration-aop</artifactId>
@@ -127,6 +133,17 @@
       <plugin>
         <groupId>org.mortbay.jetty</groupId>
         <artifactId>maven-jetty-plugin</artifactId>
+      </plugin>
+
+      <!-- mybatis-generator  -->
+      <plugin>
+        <groupId>org.mybatis.generator</groupId>
+        <artifactId>mybatis-generator-maven-plugin</artifactId>
+        <version>1.3.2</version>
+        <configuration>
+          <verbose>true</verbose>
+          <overwrite>true</overwrite>
+        </configuration>
       </plugin>
 
     </plugins>
