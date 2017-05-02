@@ -75,6 +75,11 @@
       <artifactId>spring-aop</artifactId>
       <version>${spring.version}</version>
     </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-webmvc</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
     <!-- spring aop 依赖包 -->
     <dependency>
       <groupId>org.aspectj</groupId>
@@ -97,16 +102,16 @@
     </dependency>
 
     <!-- servlet3.0核心包 -->
-    <!--<dependency>-->
-      <!--<groupId>javax.servlet</groupId>-->
-      <!--<artifactId>javax.servlet-api</artifactId>-->
-      <!--<version>${javax.servlet-api.version}</version>-->
-    <!--</dependency>-->
-    <!--<dependency>-->
-      <!--<groupId>javax.servlet.jsp</groupId>-->
-      <!--<artifactId>javax.servlet.jsp-api</artifactId>-->
-      <!--<version>${javax.servlet.jsp-api.version}</version>-->
-    <!--</dependency>-->
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>${javax.servlet-api.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>javax.servlet.jsp</groupId>
+      <artifactId>javax.servlet.jsp-api</artifactId>
+      <version>${javax.servlet.jsp-api.version}</version>
+    </dependency>
 
     <!-- jstl -->
     <dependency>
