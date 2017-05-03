@@ -80,6 +80,11 @@
       <artifactId>spring-webmvc</artifactId>
       <version>${spring.version}</version>
     </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-oxm</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
     <!-- spring aop 依赖包 -->
     <dependency>
       <groupId>org.aspectj</groupId>
@@ -169,6 +174,13 @@
       <artifactId>lombok</artifactId>
       <version>1.16.8</version>
       <scope>provided</scope>
+    </dependency>
+
+    <!-- xml -->
+    <dependency>
+      <groupId>com.thoughtworks.xstream</groupId>
+      <artifactId>xstream</artifactId>
+      <version>1.4.2</version>
     </dependency>
 
   </dependencies>
