@@ -15,9 +15,20 @@
     <context:component-scan base-package="com.souche.web" />
 
     <!-- 自动注册 DefaultAnnotationHandlerMapping 与 AnnotationMethodHandlerAdapter -->
-    <mvc:annotation-driven />
+    <!-- 并且覆盖默认的 FormattingConversionServiceFactoryBean -->
+    <mvc:annotation-driven conversion-service="conversionService" />
+    <bean id="conversionService"
+        class="org.springframework.context.support.ConversionServiceFactoryBean">
+        <property name="converters">
+            <set>
+                <bean class="com.souche.web.support.StringToUserConverter" />
+            </set>
+        </property>
+    </bean>
 
     <!-- 视图解析 -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"
           p:prefix="/WEB-INF/views/" p:suffix=".jsp" />
+
+
 </beans>
