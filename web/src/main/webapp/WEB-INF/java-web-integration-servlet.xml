@@ -18,12 +18,17 @@
     <!-- 并且覆盖默认的 FormattingConversionServiceFactoryBean -->
     <mvc:annotation-driven conversion-service="conversionService" />
     <bean id="conversionService"
-        class="org.springframework.context.support.ConversionServiceFactoryBean">
-        <property name="converters">
+        class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+        <property name="formatters">
             <set>
-                <bean class="com.souche.web.support.StringToUserConverter" />
+                <bean class="com.souche.web.support.StringToUserFormatter" />
             </set>
         </property>
+        <!--<property name="converters">-->
+            <!--<set>-->
+                <!--<bean class="com.souche.web.support.StringToUserConverter" />-->
+            <!--</set>-->
+        <!--</property>-->
     </bean>
 
     <!-- 视图解析 -->

@@ -22,6 +22,7 @@ public class DataBindController {
 
     @InitBinder
     public void initBinder(WebDataBinder webDataBinder) {
+        // Date 类型的数据绑定到方法入参都是 "yyyy-MM-dd" 这种格式
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         dateFormat.setLenient(false);
         webDataBinder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, true));
@@ -29,8 +30,12 @@ public class DataBindController {
 
     @RequestMapping("/handle1")
     public String handle1(Date date, User user) {
+        // 也可以在 User 类中使用注解驱动格式化
         System.out.println("date = " + date);
+        System.out.println("date.toLocaleString() = " + date.toLocaleString());
         System.out.println("user = " + user);
         return "/user/register";
     }
+
+
 }

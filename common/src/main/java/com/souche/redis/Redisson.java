@@ -6,7 +6,7 @@ import org.redisson.config.Config;
 
 /**
  * @author guishangquan
- * @Description
+ * @Description 发布时会有问题，连接不上服务器或者是不支持 eval 命令
  * @Package com.souche.redis
  * @date 17/4/27
  **/
