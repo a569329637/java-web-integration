@@ -183,6 +183,21 @@
       <version>1.4.2</version>
     </dependency>
 
+    <!-- https://mvnrepository.com/artifact/javax.validation/validation-api -->
+    <!-- 数据校验注解 -->
+    <dependency>
+      <groupId>javax.validation</groupId>
+      <artifactId>validation-api</artifactId>
+      <version>1.0.0.GA</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-validator -->
+    <!-- 数据校验注解 -->
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-validator</artifactId>
+      <version>4.3.1.Final</version>
+    </dependency>
+
   </dependencies>
   </dependencyManagement>
 

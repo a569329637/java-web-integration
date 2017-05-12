@@ -35,5 +35,9 @@
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"
           p:prefix="/WEB-INF/views/" p:suffix=".jsp" />
 
+    <!-- 国际化资源 -->
+    <!--<bean id="messageSource"-->
+        <!--class="org.springframework.context.support.ResourceBundleMessageSource"-->
+        <!--p:basename="classpath:conf/i18n/messages"/>-->
 
 </beans>
