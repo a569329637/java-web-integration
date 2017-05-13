@@ -1,3 +1,4 @@
 /target/
 /logs/
 java-web-integration-web.iml
+/catalina.base_IS_UNDEFINED/

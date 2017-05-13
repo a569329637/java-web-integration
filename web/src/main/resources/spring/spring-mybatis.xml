@@ -10,9 +10,10 @@
 	<!-- 配置数据源，使用的是alibaba的Druid(德鲁伊)数据源 -->
 	<bean name="dataSource" class="com.alibaba.druid.pool.DruidDataSource"
 		init-method="init" destroy-method="close">
-		<property name="url" value="${jdbc_url}" />
-		<property name="username" value="${jdbc_username}" />
-		<property name="password" value="${jdbc_password}" />
+		<property name="driverClassName" value="${jdbc.driver}" />
+		<property name="url" value="${jdbc.url}" />
+		<property name="username" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
 		<!-- 初始化连接大小 -->
 		<property name="initialSize" value="0" />
 		<!-- 连接池最大使用连接数量 -->
@@ -25,7 +26,7 @@
 		<property name="maxWait" value="60000" />
 		<!-- <property name="poolPreparedStatements" value="true" /> <property 
 			name="maxPoolPreparedStatementPerConnectionSize" value="33" /> -->
-		<property name="validationQuery" value="${validationQuery}" />
+		<property name="validationQuery" value="${jdbc.validationQuery}" />
 		<property name="testOnBorrow" value="false" />
 		<property name="testOnReturn" value="false" />
 		<property name="testWhileIdle" value="true" />

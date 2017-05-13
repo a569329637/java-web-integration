@@ -7,11 +7,19 @@
 					http://www.springframework.org/schema/context
 					http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
-    <!-- 引入dbconfig.properties属性文件 -->
-    <context:property-placeholder location="classpath:properties/dbconfig.properties" />
+    <!-- 引入properties属性文件 -->
+    <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="ignoreUnresolvablePlaceholders" value="true" />
+        <property name="locations">
+            <list>
+                <value>classpath*:properties/*.properties</value>
+            </list>
+        </property>
+    </bean>
 
     <import resource="classpath:spring/spring-mybatis.xml" />
     <import resource="classpath:spring/spring-transaction.xml" />
     <import resource="classpath:spring/spring-service.xml" />
     <import resource="classpath:spring/spring-aop.xml" />
+    <import resource="classpath:spring/spring-redis.xml" />
 </beans>
