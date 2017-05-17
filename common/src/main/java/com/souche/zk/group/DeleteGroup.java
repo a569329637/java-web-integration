@@ -1,5 +1,6 @@
 package com.souche.zk.group;
 
+import com.souche.zk.ConnectionWatcher;
 import org.apache.zookeeper.KeeperException;
 
 import java.io.IOException;

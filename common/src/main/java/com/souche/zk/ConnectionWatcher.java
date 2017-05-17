@@ -1,4 +1,4 @@
-package com.souche.zk.group;
+package com.souche.zk;
 
 import org.apache.zookeeper.WatchedEvent;
 import org.apache.zookeeper.Watcher;
