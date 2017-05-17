@@ -1,4 +1,4 @@
-package com.souche.zk;
+package com.souche.zk.group;
 
 import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.KeeperException;
