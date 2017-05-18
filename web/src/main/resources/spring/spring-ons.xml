@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"
+       default-autowire="byName" default-lazy-init="false">
+
+    <!-- listener 配置 -->
+    <bean id="consumerListener" class="com.souche.ons.ConsumerMessageListener"/>
+    <!-- 消费者 -->
+    <bean id="consumer"
+          class="com.aliyun.openservices.ons.api.bean.ConsumerBean"
+          init-method="start"
+          destroy-method="shutdown">
+
+        <!-- 消费者配置信息 -->
+        <property name="properties">
+            <props>
+                <prop key="ConsumerId">CID_A569329637_TEST_1</prop>
+                <prop key="AccessKey">LTAIRhFJFFpFY2UF</prop>
+                <prop key="SecretKey">klh1wC03YzJhNtDFLYz548NlN6jFbB</prop>
+                <!--将消费者线程数固定为50个
+                <prop key="ConsumeThreadNums">50</prop>
+                -->
+            </props>
+        </property>
+
+        <!-- 订阅列表 -->
+        <property name="subscriptionTable">
+            <map>
+                <entry value-ref="consumerListener">
+                    <key>
+                        <bean class="com.aliyun.openservices.ons.api.bean.Subscription">
+                            <property name="topic" value="a569329637_test"/>
+                            <!--
+                                expression即Tag，可以设置成具体的Tag，
+                                如 taga||tagb||tagc，也可设置成*。
+                                *仅代表订阅所有Tag，不支持通配
+                            -->
+                            <property name="expression" value="TagC"/>
+                        </bean>
+                    </key>
+                </entry>
+            </map>
+        </property>
+    </bean>
+
+    <!-- 生产者 -->
+    <bean id="producer"
+          class="com.aliyun.openservices.ons.api.bean.ProducerBean"
+          init-method="start"
+          destroy-method="shutdown">
+        <!--生产者配置信息-->
+        <property name="properties">
+            <props>
+                <prop key="ProducerId">PID_A569329637_TEST_1</prop>
+                <prop key="AccessKey">LTAIRhFJFFpFY2UF</prop>
+                <prop key="SecretKey">klh1wC03YzJhNtDFLYz548NlN6jFbB</prop>
+            </props>
+        </property>
+    </bean>
+</beans>
