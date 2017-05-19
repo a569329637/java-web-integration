@@ -1,5 +1,8 @@
 package com.souche.model;
 
+import lombok.Data;
+
+@Data
 public class User {
     private Long id;
 
@@ -39,15 +42,5 @@ public class User {
 
     public void setRealName(String realName) {
         this.realName = realName == null ? null : realName.trim();
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", userName='" + userName + '\'' +
-                ", password='" + password + '\'' +
-                ", realName='" + realName + '\'' +
-                '}';
     }
 }

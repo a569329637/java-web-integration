@@ -23,4 +23,5 @@
     <import resource="classpath:spring/spring-aop.xml" />
     <import resource="classpath:spring/spring-redis.xml" />
     <import resource="classpath:spring/spring-ons.xml" />
+    <import resource="classpath:spring/spring-dao.xml" />
 </beans>
