@@ -6,3 +6,6 @@
 .project
 .classpath
 java-web-integration.iml
+
+/dubbo-api/dubbo-api.iml
+/dubbo-api/target/
