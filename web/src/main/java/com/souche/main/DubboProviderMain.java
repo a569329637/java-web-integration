@@ -11,6 +11,7 @@ import java.io.IOException;
  * @date 17/5/20
  **/
 public class DubboProviderMain {
+    // 测试时候记得把依赖取消注释
     public static void main(String[] args) throws IOException {
         ClassPathXmlApplicationContext ac = new ClassPathXmlApplicationContext("spring/spring-dubbo-provider.xml");
         ac.start();
