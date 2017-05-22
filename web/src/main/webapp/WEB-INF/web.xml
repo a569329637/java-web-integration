@@ -21,6 +21,23 @@
       <servlet-name>DruidStatView</servlet-name>
       <url-pattern>/druid/*</url-pattern>
   </servlet-mapping>
+
+  <!-- hessian 接口 -->
+  <servlet>
+    <!-- 配置 HessianServlet，Servlet的命名任意-->
+    <servlet-name>ServiceServlet</servlet-name>
+    <servlet-class>com.caucho.hessian.server.HessianServlet</servlet-class>
+    <!-- 配置接口的具体实现类 ,param-name命名任意-->
+    <init-param>
+      <param-name>service-class</param-name>
+      <param-value>com.souche.hessian.impl.HessianServiceImpl</param-value>
+    </init-param>
+  </servlet>
+  <!-- 映射 HessianServlet的访问URL地址-->
+  <servlet-mapping>
+    <servlet-name>ServiceServlet</servlet-name>
+    <url-pattern>/ServiceServlet/*</url-pattern>
+  </servlet-mapping>
   
   <!-- 修改log4j.properties文件位置 -->
   <context-param>

@@ -152,6 +152,11 @@
     <!--</dependency>-->
 
     <dependency>
+        <groupId>com.caucho</groupId>
+        <artifactId>hessian</artifactId>
+    </dependency>
+
+    <dependency>
       <groupId>com.souche</groupId>
       <artifactId>java-web-integration-aop</artifactId>
       <version>1.0-SNAPSHOT</version>
