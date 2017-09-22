@@ -1,4 +1,4 @@
-package com.souche.shiro.ch1;
+package com.souche.shiro.ch2;
 
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
@@ -10,12 +10,12 @@ import org.apache.shiro.util.Factory;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class LoginLogoutTest {
+public class MyRealmTest {
 
     @Test
-    public void testLoginLogout() {
-        // 获取 SecurityManager 工厂，通过 shiro.ini 文件创建
-        Factory<SecurityManager> factory = new IniSecurityManagerFactory("classpath:ch1/shiro.ini");
+    public void testCustomRealm() {
+        // 获取 SecurityManager 工厂，通过 shiro-realm.ini 文件创建，会自动加载 MyRealm1.java 文件
+        Factory<SecurityManager> factory = new IniSecurityManagerFactory("classpath:ch2/shiro-realm.ini");
         // 获取 SecurityManager 实例
         SecurityManager instance = factory.getInstance();
         //
@@ -39,5 +39,4 @@ public class LoginLogoutTest {
         // 登出
         subject.logout();
     }
-
 }
