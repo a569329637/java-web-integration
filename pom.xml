@@ -253,6 +253,7 @@
     <module>aop-test</module>
     <module>common</module>
     <module>dubbo-api</module>
+      <module>shiro</module>
   </modules>
 
 </project>

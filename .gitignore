@@ -9,3 +9,9 @@ java-web-integration.iml
 
 /dubbo-api/dubbo-api.iml
 /dubbo-api/target/
+
+/aop-test/java-web-integration-aop.iml
+/aop-test/target
+
+/shiro/shiro.iml
+/shiro/target
