@@ -12,4 +12,9 @@ public class IndexController {
     public String index() {
         return "index";
     }
+
+    @RequestMapping("welcome")
+    public String welcome() {
+        return "welcome";
+    }
 }
