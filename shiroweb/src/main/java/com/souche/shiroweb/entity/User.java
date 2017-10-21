@@ -7,6 +7,7 @@ import org.springframework.util.CollectionUtils;
 import org.springframework.util.StringUtils;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 @AllArgsConstructor
@@ -23,6 +24,13 @@ public class User implements Serializable {
 
     public String getCredentialsSalt() {
         return username + salt;
+    }
+
+    public List<Long> getRoleIds() {
+        if (roleIds == null) {
+            return new ArrayList<>();
+        }
+        return roleIds;
     }
 
     public String getRoleIdsStr() {
