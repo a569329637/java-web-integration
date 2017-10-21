@@ -16,6 +16,7 @@ java-web-integration.iml
 /shiro/shiro.iml
 /shiro/target
 
+/shiroweb/shiro-web.iml
 /shiroweb/shiroweb.iml
 /shiroweb/target
 /shiroweb/logs

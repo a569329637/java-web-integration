@@ -21,6 +21,10 @@ public class User implements Serializable {
     private List<Long> roleIds; //拥有的角色列表
     private Boolean locked = Boolean.FALSE;
 
+    public String getCredentialsSalt() {
+        return username + salt;
+    }
+
     public String getRoleIdsStr() {
         if(CollectionUtils.isEmpty(roleIds)) {
             return "";

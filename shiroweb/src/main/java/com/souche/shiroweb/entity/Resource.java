@@ -19,6 +19,10 @@ public class Resource implements Serializable {
     private String parentIds; //父编号列表
     private Boolean available = Boolean.FALSE;
 
+    public boolean isRootNode() {
+        return parentId == 0;
+    }
+
     public static enum ResourceType {
         menu("菜单"), button("按钮");
 
