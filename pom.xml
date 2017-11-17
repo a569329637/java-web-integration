@@ -254,6 +254,7 @@
     <module>common</module>
     <module>dubbo-api</module>
     <module>shiro</module>
+    <module>rabbitmq</module>
   </modules>
 
 </project>
