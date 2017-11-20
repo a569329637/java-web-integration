@@ -7,7 +7,10 @@ import java.util.concurrent.TimeoutException;
 
 /**
  * Created by Administrator on 2017/11/17.
- * 分发到多个consumer
+ * 广播（分发到多个队列）
+ * 消费者创建广播模式的交换机logs，创建队列queueName
+ * 绑定交换机logs和队列queueName（这样从交换机logs的消息就会路由到队列queueName）
+ * 从队列queueName里接受消息
  */
 public class ReceiveLogs {
     private static final String EXCHANGE_NAME = "logs";

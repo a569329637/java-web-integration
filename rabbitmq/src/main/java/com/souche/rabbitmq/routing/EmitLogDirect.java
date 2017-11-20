@@ -9,6 +9,8 @@ import java.util.concurrent.TimeoutException;
 
 /**
  * Created by Administrator on 2017/11/17.
+ * 路由规则
+ * 生产者创建直连模式交换机direct_logs，发送消息到direct_logs和severity
  */
 public class EmitLogDirect {
     private static final String EXCHANGE_NAME = "direct_logs";

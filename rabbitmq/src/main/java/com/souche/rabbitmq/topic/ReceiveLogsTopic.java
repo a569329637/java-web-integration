@@ -7,7 +7,10 @@ import java.util.concurrent.TimeoutException;
 
 /**
  * Created by Administrator on 2017/11/18.
- * 使用主题进行消息分发
+ * topic模式（*可以表示一个单词，#可以表示一个或多个单词）
+ * 消费者创建主题模式交换机topic_logs，创建队列queueName
+ * 将队列queueName与交换机topic_logs和多个routing_key（该字符串包含*#）进行绑定
+ * 消息就可以通过topic_logs和多个routing_key（该字符串包含*#）来路由到队列queueName
  */
 public class ReceiveLogsTopic {
 

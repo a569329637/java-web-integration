@@ -7,7 +7,10 @@ import java.util.concurrent.TimeoutException;
 
 /**
  * Created by Administrator on 2017/11/17.
- * Routing 消息路由
+ * 路由规则（Routing 消息路由）
+ * 消费者创建直连模式交换机direct_logs，创建队列queueName
+ * 将队列queueName和交换机direct_logs绑定，并且绑定了多个routing_key
+ * 消息就可以通过direct_logs和多个routing_key来路由到队列queueName
  */
 public class ReceiveLogsDirect {
     private static final String EXCHANGE_NAME = "direct_logs";

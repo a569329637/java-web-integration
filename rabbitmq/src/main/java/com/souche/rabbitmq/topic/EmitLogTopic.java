@@ -9,6 +9,8 @@ import java.util.concurrent.TimeoutException;
 
 /**
  * Created by Administrator on 2017/11/18.
+ * topic模式（*可以表示一个单词，#可以表示一个或多个单词）
+ * 生产者创建主题模式交换机topic_logs，发送消息到topic_logs和routing_key（该字符串包含*#）
  */
 public class EmitLogTopic {
 

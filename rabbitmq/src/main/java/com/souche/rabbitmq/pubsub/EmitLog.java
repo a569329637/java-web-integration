@@ -9,6 +9,8 @@ import java.util.concurrent.TimeoutException;
 
 /**
  * Created by Administrator on 2017/11/17.
+ * 广播
+ * 生产者创建广播模式的交换机logs，并且发送消息到交换机logs
  */
 public class EmitLog {
     private static final String EXCHANGE_NAME = "logs";

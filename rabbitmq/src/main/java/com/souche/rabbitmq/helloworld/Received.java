@@ -10,6 +10,7 @@ import java.util.concurrent.TimeoutException;
 
 /**
  * Created by Administrator on 2017/11/17.
+ * 消费者创建队列hello，并且直接从队列hello接受消息
  */
 public class Received {
     private final static String QUEUE_NAME = "hello";

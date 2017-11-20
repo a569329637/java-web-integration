@@ -7,7 +7,8 @@ import java.util.concurrent.TimeoutException;
 
 /**
  * Created by Administrator on 2017/11/17.
- * 任务分发机制
+ * 任务分发机制（一个队列多个消费者）
+ * 消费者创建持久化队列task_queue，设置负载均衡qos，取消自动提交ack，消息处理完成后手动提交ack
  */
 public class Worker {
     private final static String TASK_QUEUE_NAME = "task_queue";

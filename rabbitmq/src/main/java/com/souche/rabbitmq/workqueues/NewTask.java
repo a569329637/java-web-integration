@@ -10,6 +10,7 @@ import java.util.concurrent.TimeoutException;
 
 /**
  * Created by Administrator on 2017/11/17.
+ * 生产者创建消息持久化队列task_queue，并且直接发送消息到队列task_queue
  */
 public class NewTask {
     private final static String TASK_QUEUE_NAME = "task_queue";
@@ -27,6 +28,7 @@ public class NewTask {
 
         // 发送消息message
         String message = getMessage(args);
+        // 消息的类型是 "text/plain"
         channel.basicPublish("", TASK_QUEUE_NAME, MessageProperties.PERSISTENT_TEXT_PLAIN, message.getBytes());
         System.out.println(" [x] Sent '" + message + "'");
 
