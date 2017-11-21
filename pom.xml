@@ -255,6 +255,7 @@
     <module>dubbo-api</module>
     <module>shiro</module>
     <module>rabbitmq</module>
+    <module>collection</module>
   </modules>
 
 </project>
