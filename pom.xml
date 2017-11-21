@@ -256,6 +256,7 @@
     <module>shiro</module>
     <module>rabbitmq</module>
     <module>collection</module>
+    <module>io</module>
   </modules>
 
 </project>
