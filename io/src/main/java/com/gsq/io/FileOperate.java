@@ -1,4 +1,4 @@
-package com.gsq.io.file;
+package com.gsq.io;
 
 import java.io.File;
 import java.io.IOException;
