@@ -257,6 +257,7 @@
     <module>rabbitmq</module>
     <module>collection</module>
     <module>io</module>
+    <module>thread</module>
   </modules>
 
 </project>
