@@ -25,3 +25,7 @@ java-web-integration.iml
 /thread/thread.iml
 /thread/target
 /thread/logs
+
+/kafka/target
+/kafka/kafka.iml
+

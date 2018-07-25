@@ -258,6 +258,7 @@
     <module>collection</module>
     <module>io</module>
     <module>thread</module>
+      <module>kafka</module>
   </modules>
 
 </project>
