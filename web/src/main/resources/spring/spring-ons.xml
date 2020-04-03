@@ -55,8 +55,8 @@
         <property name="properties">
             <props>
                 <prop key="ProducerId">PID_A569329637_TEST_1</prop>
-                <prop key="AccessKey">LTAIRhFJFFpFY2UF</prop>
-                <prop key="SecretKey">klh1wC03YzJhNtDFLYz548NlN6jFbB</prop>
+                <prop key="AccessKey">sdjfklsdjflksdf</prop>
+                <prop key="SecretKey">sdjkfsjdlkfjklsdf</prop>
             </props>
         </property>
     </bean>
